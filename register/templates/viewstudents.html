@@ -1,0 +1,79 @@
+{% load static %}<!DOCTYPE html>
+<html>
+<head>
+<title>
+</title>
+<link rel="stylesheet"href="{% static 'css/style3.css' %}">
+<style>
+table,th,td{border:1px solid black;border-collapse:collapse}
+</style>
+
+</head>
+<body class="b1">
+<div class="navbar">
+<ul>
+
+<li><a href="edit.html">Edit</a>
+
+<div class="submenu">
+<ul>
+<li><a href="{% url 'passwordchange'%}">Password</a></li>
+<li><a href="{% url 'mobilechange'%}">Mobile</a></li>
+<li><a href="{% url 'emailchange'%}">Email</a></li>
+
+</ul>
+</div>
+<li><a href="{% url 'index'%}">Logout</a></li>
+</ul>
+</div>
+<div>
+			<h1>STUDENT DETAILS</h1>
+			<br><br>
+			<table>
+				<thead>
+					<tr>
+						<th>Student id</th>
+						<th>AdmNo</th>
+						<th>Name</th>
+						<th>Address</th>
+						<th>DOB</th>
+						<th>Gender</th>
+						<th>Mobile</th>
+                        <th>AdmDate</th>
+						<th>Guardian</th>
+						<th>Batch</th>
+						<th>Email</th>
+                        <th>Password</th>
+					</tr>
+
+				</thead>
+				<tbody>
+					{%if authors%}
+					{%for i in authors%}
+					<tr>
+                        <td>{{i.stdid}}</td>
+						<td>{{i.admno}}</td>
+						<td>{{i.name}}</td>
+						<td>{{i.address}}</td>
+						<td>{{i.dob}}</td>
+						<td>{{i.gender}}</td>
+						<td>{{i.mobile}}</td>
+                        <td>{{i.admdate}}</td>
+						<td>{{i.guardian}}</td>
+						<td>{{i.batch}}</td>
+						<td>{{i.email}}</td>
+                        <td>{{i.password}}</td>
+					</tr>
+					{% endfor %}
+				{%endif %}
+
+				</tbody>
+			</table>
+
+		</div>
+	
+	</div>
+	
+	</body>
+</html>
+		

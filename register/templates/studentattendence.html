@@ -1,0 +1,38 @@
+{% load static %}<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<link rel="stylesheet" href="{% static 'css/style5.css' %}">
+
+<style>
+</style>
+</head>
+<body class="b">
+<div class="menubar">
+<ul>
+<li><a href="#">STUDENT ATTENDENCE</a></li>
+<li><a href="{% url 'logout'%}">LOGOUT</a></li>
+</ul>
+</div>
+<form action="{% url 'studentattendence'%}" method="POST">
+ {% csrf_token %}
+<div class="cont">
+<h3>Date:</h3>
+<input type="date" class="frm" name="date" placeholder=""><br>
+<h3>Student id:<h3>
+<input type="text" class="frm" name="stdid" placeholder=""><br>
+<h3>Name:</h3>
+<input type="text" class="frm" name="name" placeholder=""><br>
+<h3>Hour1 Status:</h3>
+<input type="text" class="frm" name="hour1status" placeholder=""><br>
+<h3>Hour2 Status:</h3>
+<input type="text" class="frm" name="hour2status" placeholder=""><br>
+<h3>Hour3 Status:</h3>
+<input type="text" class="frm" name="hour3status" placeholder=""><br>
+<h3>Hour4 status:</h3>
+<input type="text" class="frm" name="hour4status" placeholder=""><br>
+<center><input type="submit" name="submit" class="btn" value="Submit"></center>
+</form>
+</div>
+</body>
+</html>
